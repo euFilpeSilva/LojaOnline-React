@@ -1,7 +1,6 @@
 import { Heart, ShoppingCart } from 'phosphor-react';
 
 export default function Navbar() {
-
     return (
         <div >
             <nav className=" bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800">
@@ -17,7 +16,7 @@ export default function Navbar() {
                     <div >
                         <div className="flex space-x-5 mx-5">
                             <Heart size={32} color="#ffffff" weight="fill" />
-                            <ShoppingCart size={32} color="#ffffff" weight="fill" />
+                           <button ><ShoppingCart size={32} color="#ffffff" weight="fill" /></button> 
                         </div>
                     </div>
                 </div>
