@@ -16,17 +16,17 @@ export default function Navbar(props: NavBarProps) {
                         </div>
                     </a>
                     <div className="content">
-                        <input type="text" id="search-navbar" className=" w-96 block p-2 pl-10  text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
+                        <input type="text" id="search-navbar" className=" w-96 block p-2 pl-10  text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 " placeholder="Search..." />
                     </div>
                     <div >
                         <div className="flex space-x-5 mx-5">
                             <ActionButton
-                                icon={<Heart size={32} color="#ffffff" weight="fill" />}
+                                icon={<button><Heart size={32} color="#ffffff" weight="fill" /></button>}
                                 onTap={() => { }}
                             />
 
                             <ActionButton
-                                icon={<ShoppingCart size={32} color="#ffffff" weight="fill" />}
+                                icon={<button><ShoppingCart size={32} color="#ffffff" weight="fill" /></button>}
                                 onTap={props.cartAction}
                             />
 

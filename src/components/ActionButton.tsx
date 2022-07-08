@@ -1,6 +1,3 @@
-import { Heart, IconProps, ShoppingCart } from "phosphor-react";
-import { ForwardRefExoticComponent, RefAttributes } from "react";
-
 type ActionButtonProps = {
     icon: any,
     onTap: () => void,
