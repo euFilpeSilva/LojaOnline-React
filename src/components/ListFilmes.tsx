@@ -21,9 +21,9 @@ export default function ListFilmes() {
    
   return(
         <div>
-         <ul className=" grid grid-cols-4 gap-2 mt-10 ">
+         <ul className=" grid grid-cols-4 justify-center items-center mt-10 ml-20 absolute left-44 ">
         {filmes.map(filme => (
-            <li key={filme.id} className="border-1 border-black rounded">
+            <li key={filme.id} className="border-2 border-slate-600 rounded w-44 p-1 ml-14 mb-5">
                  <img src={`${image_path}${filme.poster_path}`}></img>
                  <strong>{filme.title}</strong>
             </li>
