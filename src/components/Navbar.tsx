@@ -1,6 +1,11 @@
-import { Heart, ShoppingCart } from 'phosphor-react';
+import { Heart, ShoppingCart } from "phosphor-react";
+import ActionButton from "./ActionButton";
 
-export default function Navbar() {
+type NavBarProps = {
+    cartAction : () => void,
+}
+
+export default function Navbar(props: NavBarProps) {
     return (
         <div >
             <nav className=" bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800">
@@ -15,13 +20,21 @@ export default function Navbar() {
                     </div>
                     <div >
                         <div className="flex space-x-5 mx-5">
-                            <Heart size={32} color="#ffffff" weight="fill" />
-                           <button ><ShoppingCart size={32} color="#ffffff" weight="fill" /></button> 
+                            <ActionButton
+                                icon={<Heart size={32} color="#ffffff" weight="fill" />}
+                                onTap={() => { }}
+                            />
+
+                            <ActionButton
+                                icon={<ShoppingCart size={32} color="#ffffff" weight="fill" />}
+                                onTap={props.cartAction}
+                            />
+
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
-       
+
     );
 }
