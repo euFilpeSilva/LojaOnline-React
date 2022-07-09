@@ -12,7 +12,7 @@ export default function Sidebar(props : SideBarProps) {
 
     return (
      <>
-        <div className="border-l-2 border-gray-700 top-15 right-0 h-full fixed bg-gray-600 " style={styles}>
+        <div className="border-l-2 bg-slate-800 top-15 right-0 h-full fixed bg-gray-600 " style={styles}>
             <h2 className="text-2-xl text-white">This is Sidebar</h2>
         </div>
     </>
