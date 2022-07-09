@@ -1,7 +1,6 @@
 import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
-
 import React, { useState } from "react"
+import ListFilmes from './components/ListFilmes';
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,13 +8,14 @@ export default function App() {
 
   return (
     <div className=''>
-          <div>
-               <Navbar cartAction={showSidebar} />
-          </div>
-          <div>
-                <Sidebar isOpen={isOpen} />
-          </div>
+      <div>
+        <Navbar cartAction={showSidebar} />
+      </div>
+      <div>
+        <ListFilmes isOpen={isOpen} />
+      </div>
     </div>
+
   )
 }
 
