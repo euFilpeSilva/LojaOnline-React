@@ -7,8 +7,8 @@ export default function App() {
   const showSidebar = () => setIsOpen(!isOpen)
 
   return (
-    <div className=''>
-      <div>
+    <div >
+      <div >
         <Navbar cartAction={showSidebar} />
       </div>
       <div>

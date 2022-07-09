@@ -12,8 +12,8 @@ export default function Sidebar(props : SideBarProps) {
 
     return (
      <>
-        <div className="border-l-2 bg-slate-800 top-15 right-0 h-full fixed bg-gray-600 " style={styles}>
-            <h2 className="text-2-xl text-white">This is Sidebar</h2>
+        <div className="border-l-[0.05vw] dark:bg-gray-800 top-15 right-0 h-full fixed border-slate-600 mt-24" style={styles}>
+            <h2 className="text-2-xl text-white p-5">Carrinho</h2>
         </div>
     </>
 
