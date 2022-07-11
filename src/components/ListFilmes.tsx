@@ -2,7 +2,7 @@ import axios from "axios";
 import { Heart } from "phosphor-react";
 import { useEffect, useState } from 'react';
 import ActionButton from "./ActionButton";
-import GenreFilms from "./GenereFilms";
+import GenreFilms from "./GenreFilms";
 import Sidebar from './Sidebar'
 
 export type Film = {
@@ -54,7 +54,7 @@ export default function ListFilmes(props: ListFilmsrProps) {
               <li key={filme.id} className="border-2 border-slate-600 rounded  m-4 flex flex-col  w-60">
                 <img src={`${image_path}${filme.poster_path}`} className="w-60 h-80" />
                 <strong className="p-2 text-center leading-5 text-gray-700 bg-white">{filme.title}</strong>
-                <GenreFilms film={filme} />
+                <GenreFilms film={filme}/>
                 <button className="bg-blue-600 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                   Adicionar
                 </button>

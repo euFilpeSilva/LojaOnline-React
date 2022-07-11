@@ -1,4 +1,4 @@
-import { Heart, MagnifyingGlass, ShoppingCart } from "phosphor-react";
+import { Heart, ShoppingCart } from "phosphor-react";
 import ActionButton from "./ActionButton";
 
 type NavBarProps = {
