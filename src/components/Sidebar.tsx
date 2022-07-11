@@ -16,6 +16,5 @@ export default function Sidebar(props : SideBarProps) {
             <h2 className="text-2-xl text-white p-5">Carrinho</h2>
         </div>
     </>
-
     )
 }
