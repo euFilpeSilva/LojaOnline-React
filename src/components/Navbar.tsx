@@ -28,14 +28,14 @@ export default function Navbar(props: NavBarProps) {
 
                     </div>
                     <div >
-                        <div className="flex space-x-5 mx-5">
-                            <ActionButton
-                                icon={<button><Heart size={32} color="#ffffff" weight="fill" /></button>}
+                        <div className="flex space-x-5 mx-5 ">
+                            <ActionButton 
+                                icon={<button className="transform motion-safe:hover:scale-110 ... transition-all shadow-md"><Heart size={32} color="#ffffff" weight="fill" /></button>}
                                 onTap={() => { }}
                             />
                                 {/*o CartAction foi criado pra atualizar o isOpen*/}
                             <ActionButton
-                                icon={<button><ShoppingCart size={32} color="#ffffff" weight="fill" /></button>}
+                                icon={<button className="transform motion-safe:hover:scale-110 ... transition-all shadow-md"><ShoppingCart size={32} color="#ffffff" weight="fill" /></button>}
                                 onTap={props.cartAction}
                                 />
                         </div>

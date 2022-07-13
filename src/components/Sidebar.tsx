@@ -18,7 +18,7 @@ export default function Sidebar(props : SideBarProps) {
             <h2 className="text-2-xl text-white p-5">Carrinho:</h2>
           </div>
             <p className="text-white pl-1">Total:</p>
-            <button className="bg-blue-600 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded ml-1 mt-1 transform motion-safe:hover:scale-105 ... transition-all shadow-sm" style={styles}>
+            <button className="bg-blue-600 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded ml-1 mt-1 transition-all " style={styles}>
                   Finalizar compra
             </button>
         </div>

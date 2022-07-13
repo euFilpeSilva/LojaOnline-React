@@ -28,7 +28,7 @@ type ListFilmsrProps = {
 export default function ListFilmes(props: ListFilmsrProps) {
   const [filmes, setFilmes] = useState<Film[]>([]);
 
-  const baseURL = "https://api.themoviedb.org/3/movie/popular?api_key=c53174418b2a81eacf8a7966fa850c98&language=pt-BR"
+  const baseURL = "https://api.themoviedb.org/3/movie/popular?api_key=c53174418b2a81eacf8a7966fa850c98&language=pt-BR&page+=page"
   const image_path = "https://image.tmdb.org/t/p/w500"
 
 
