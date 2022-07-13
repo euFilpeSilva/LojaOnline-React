@@ -35,8 +35,7 @@ export default function GenreFilms(props: GenreFilmsProps) {
 
         return (
 
-            <div className="pl-3 pt-0 pb-5 text-center leading-5 text-gray-700 bg-white flex gap-1 text-xs ">
-                    <strong className="">Gênero:</strong>
+            <div className="pl-3 pt-0 pb-5 text-center leading-5 text-gray-700 bg-white flex gap-1  ">
                 {
                     genresList.map(genre => (
                         props.film.genre_ids.includes(genre.id) ? <div>{genre.name}</div> : <></>
