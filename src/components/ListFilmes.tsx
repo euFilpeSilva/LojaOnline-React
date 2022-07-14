@@ -56,12 +56,12 @@ export default function ListFilmes(props: ListFilmsrProps) {
                 <img src={`${image_path}${filme.poster_path}`} className=" w-60 h-96" />
                 <strong className="p-1 pb-2 text-center leading-4 text-gray-700 bg-white pt-2 ">{filme.title}</strong>
                 <div className=" flex flex-col bg-white pl-4 gap-1 text-sm items-center">
-                 <div className="mr-4 flex gap-1 h-5 text-center">
+                 <div className="mr-4 flex gap-1 h-4 text-center">
                   <Star size={16}  weight="bold" className="bg-white"/>
                   {filme.vote_average}
                   <GenreFilms film={filme}/>
                  </div>
-                 <div className="text-xs mb-2 mt-2 mr-4">
+                 <div className="text-xs mb-2 mt-1 mr-4">
                   <p className="bg-white text-xs pl-4 m-0 leading-3">Detalhes</p>
                   <p className="bg-white text-xs pl-4 ">Preço: ....</p>
                  </div>

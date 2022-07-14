@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar'
-import React, { useState } from "react"
+import { useState } from "react"
 import ListFilmes from './components/ListFilmes';
 
 export default function App() {
