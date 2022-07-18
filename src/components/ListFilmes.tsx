@@ -63,7 +63,7 @@ export default function ListFilmes(props: ListFilmsrProps) {
                  </div>
                  <div className="text-xs mb-2 mt-1 mr-4">
                   <p className="bg-white text-xs pl-4 m-0 leading-3">Detalhes</p>
-                  <p className="bg-white text-xs pl-4 ">Preço: ....</p>
+                  <p className="bg-white text-xs pl-6 ">Preço: ....</p>
                  </div>
                 </div>
                 <button className="bg-blue-600 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
