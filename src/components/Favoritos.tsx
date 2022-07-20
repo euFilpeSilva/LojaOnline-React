@@ -7,7 +7,7 @@ type SideBarProps = {
   removerItemCarrinho: (filme: Film) => void;
 }
 
-export default function Sidebar(props: SideBarProps) {
+export default function Favoritos(props: SideBarProps) {
 
   let styles1 = {
     width: props.isOpen ? "300px" : "0px",
