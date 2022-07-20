@@ -26,7 +26,6 @@ export default function Sidebar(props: SideBarProps) {
               />
           </h2>
         </div>
-       
       </div>
      
     </>
