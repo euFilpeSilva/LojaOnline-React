@@ -111,7 +111,7 @@ export default function ListFilmes(props: ListFilmsrProps) {
                 <div className="absolute pl-2 pr-2 pt-2 bg-blue-500 rounded-full justify-center items-center z-40 right-0 transform motion-safe:hover:scale-110 ... transition-all shadow-md">
                   <ActionButton
                     icon={<button><Heart size={32} color="#ffffff" weight="fill" /></button>}
-                    onTap={ () => {} }
+                    onTap={ () => addFilmeFavorite(filme) }
                   />
                 </div>
                 <li key={filme.id} className="border-2 border-slate-600 rounded  m-4 flex flex-col w-60 overflow-hidden">
