@@ -1,10 +1,12 @@
 import { Carrinho } from "./Carrinho"
+import Favoritos from "./Favoritos";
 import { Film } from "./ListFilmes";
 
 type SideBarProps = {
   isOpen: boolean,
-  carrinhoLista: Film[]
-  removerItemCarrinho: (filme: Film) => void;
+  carrinhoLista: Film[],
+  removerItemCarrinho: (filme: Film) => void,
+  
 }
 
 export default function Sidebar(props: SideBarProps) {
@@ -35,6 +37,7 @@ export default function Sidebar(props: SideBarProps) {
         </div>
        
       </div>
+     
     </>
   )
 }

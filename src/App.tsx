@@ -7,14 +7,17 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const showSidebar = () => setIsOpen(!isOpen)
 
+  const [isFavorite, setIsFavorite] = useState(false)
+  const showFavorite = () => setIsFavorite(!isFavorite)
+
   return (
     <div >
       <div >
         {/*cartAction reebendo a função showSidebar que atualiza o estado do isOpen*/}
-        <Navbar cartAction={showSidebar} />
+        <Navbar cartAction={ showSidebar } favoriteAction={ showFavorite } />
       </div>
       <div>
-        <ListFilmes isOpen={isOpen} />
+        <ListFilmes isOpen={isOpen} isFavorite={isFavorite}/>
       </div>
     </div>
 

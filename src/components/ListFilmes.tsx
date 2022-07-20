@@ -2,7 +2,7 @@ import axios from "axios";
 import { Heart, Star } from "phosphor-react";
 import { useEffect, useState } from 'react';
 import ActionButton from "./ActionButton";
-import Carroussel from "./Carroussel";
+import Favoritos from "./Favoritos";
 import GenreFilms from "./GenreFilms";
 import Sidebar from './Sidebar'
 
@@ -23,13 +23,16 @@ type PopularFilms = {
 }
 
 type ListFilmsrProps = {
-  isOpen: boolean
+  isOpen: boolean,
+  isFavorite: boolean,
 }
 
 
 export default function ListFilmes(props: ListFilmsrProps) {
   const [filmes, setFilmes] = useState<Film[]>([]);
   const [carrinho, setCarrinho] = useState<Film[]>([]);
+  const [favorite, setFavorite] = useState<Film[]>([]);
+
 
   const baseURL = "https://api.themoviedb.org/3/movie/popular?api_key=c53174418b2a81eacf8a7966fa850c98&language=pt-BR&page+=page"
   const image_path = "https://image.tmdb.org/t/p/w500"
@@ -43,7 +46,9 @@ export default function ListFilmes(props: ListFilmsrProps) {
 
     function addFilmesCart(filme: Film) {
         setCarrinho([...carrinho, filme]);
-
+    }
+    function addFilmeFavorite(filme: Film) {
+        setFavorite([...favorite, filme]);
     }
 
     function removerFilmeCarrinho(filme: Film) {
@@ -65,6 +70,29 @@ export default function ListFilmes(props: ListFilmsrProps) {
 
       // Ao final do loop, atualiza a lista geral do carrinho com os itens após a remoção
       setCarrinho(localLista);
+
+  }
+  
+    // Logica dos filmes favoritos
+    function removerFilmeFavorito(filme: Film) {
+      
+      // Criando uma lista local para pesquisar o item que será removido
+      let localLista = [...favorite]
+      let index = 0; // Cada vez que esta função é chamada, representa o índice do elemento atual da pesquisa
+
+      // Percorrendo a lista local para encontrar qual dos filmes tem o id igual ao do que se pretende remover (parametro)
+      localLista.forEach(item => {
+
+        // Quando o id do item atual for igual ao do filme, remove o item na posição em index
+        if(item.id == filme.id) {
+          localLista.splice(index, 1);
+        }
+
+        index++; // Se nenhuma correspondência for encontrada, apenas incrementa o index
+      });
+
+      // Ao final do loop, atualiza a lista geral do carrinho com os itens após a remoção
+      setFavorite(localLista);
 
   }
 
@@ -112,7 +140,8 @@ export default function ListFilmes(props: ListFilmsrProps) {
           </ul>
         </div>
         {/*Quando o estado do isOpen muda, o Sidebar é exibido, O isOpen é recdebido atraves do ListFilms e é atualizado fora do ListFilms*/}
-        <Sidebar isOpen={props.isOpen} carrinhoLista={carrinho} removerItemCarrinho={removerFilmeCarrinho}/>
+        <Sidebar isOpen={props.isOpen} carrinhoLista={carrinho} removerItemCarrinho={ removerFilmeCarrinho }/>
+        <Favoritos isFavorite={props.isFavorite} favoriteLista={favorite} removerItemFavorito={ removerFilmeFavorito }/>
       </div>
     </div>
   )

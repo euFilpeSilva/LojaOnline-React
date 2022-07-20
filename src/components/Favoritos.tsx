@@ -1,21 +1,21 @@
-import { Carrinho } from "./Carrinho"
+import { ListaFavoritos } from "./ListaFavoritos";
 import { Film } from "./ListFilmes";
 
 type SideBarProps = {
-  isOpen: boolean,
-  carrinhoLista: Film[]
-  removerItemCarrinho: (filme: Film) => void;
+  isFavorite: boolean,
+  favoriteLista: Film[]
+  removerItemFavorito: (filme: Film) => void;
 }
 
 export default function Favoritos(props: SideBarProps) {
 
   let styles1 = {
-    width: props.isOpen ? "300px" : "0px",
+    width: props.isFavorite ? "300px" : "0px",
     transition: "1000ms",
 
   }
   let styles2 = {
-    width: props.isOpen ? "400px" : "0px",
+    width: props.isFavorite ? "400px" : "0px",
     transition: "1000ms",
 
   }
@@ -27,9 +27,9 @@ export default function Favoritos(props: SideBarProps) {
         <div className="">
           <h2 className="text-2-xl text-white p-5">
 
-            <Carrinho
-              carrinhoLista={props.carrinhoLista}
-              removerItemCarrinho={props.removerItemCarrinho} 
+            <ListaFavoritos
+              favoriteLista={props.favoriteLista}
+              removerItemFavorito={props.removerItemFavorito} 
               />
           </h2>
         </div>
