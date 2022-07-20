@@ -98,7 +98,7 @@ export default function ListFilmes(props: ListFilmsrProps) {
 
   return (
     <div>
-          <div className="text-white  text-4xl h-[18vw]  pt-[18vw]  pl-8 dark:bg-gray-800 ">
+          <div className="text-white  text-4xl h-[5vw]  pt-[8vw]  pl-8 dark:bg-gray-800 ">
             {/* <div className="w-[100vw] h-[15vw] flex"><Carroussel/></div> */}
                 <strong>Filmes populares</strong>
           </div>
@@ -140,8 +140,8 @@ export default function ListFilmes(props: ListFilmsrProps) {
           </ul>
         </div>
         {/*Quando o estado do isOpen muda, o Sidebar é exibido, O isOpen é recdebido atraves do ListFilms e é atualizado fora do ListFilms*/}
-        <Sidebar isOpen={props.isOpen} carrinhoLista={carrinho} removerItemCarrinho={ removerFilmeCarrinho }/>
         <Favoritos isFavorite={props.isFavorite} favoriteLista={favorite} removerItemFavorito={ removerFilmeFavorito }/>
+        <Sidebar isOpen={props.isOpen} carrinhoLista={carrinho} removerItemCarrinho={ removerFilmeCarrinho }/>
       </div>
     </div>
   )

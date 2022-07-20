@@ -7,7 +7,7 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const showSidebar = () => setIsOpen(!isOpen)
 
-  const [isFavorite, setIsFavorite] = useState(false)
+  const [isFavorite, setIsFavorite] = useState(true)
   const showFavorite = () => setIsFavorite(!isFavorite)
 
   return (
