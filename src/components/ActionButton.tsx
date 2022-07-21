@@ -1,6 +1,6 @@
 type ActionButtonProps = {
     icon: any,
-onTap: () => void, 
+    onTap: () => void,
 }
 
 export default function ActionButton(props: ActionButtonProps) {
