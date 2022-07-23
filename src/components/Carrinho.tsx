@@ -1,9 +1,10 @@
 import { Film } from "./ListFilmes";
 import ActionButton from "./ActionButton";
-import { Trash } from "phosphor-react";
+import { CaretCircleLeft, CaretCircleRight, Trash } from "phosphor-react";
 
 type CarrinhoProps = {
     carrinhoLista: Film[],
+    addFilmesCart: (filme: Film) => void,
     removerItemCarrinho: (filme: Film) => void;
 
 }
@@ -27,17 +28,39 @@ export function Carrinho(props: CarrinhoProps) {
                                     <div className="flex space-x-4 ... pb-2 pt-2 pl-2 overflow-hidden ">
                                         <div className="flex w-[100%]">
                                             <img src={`${image_path}${filme.poster_path}`} className=" w-20 h-20 mr-3" />
-                                            <div className="mt-8">{filme.title}</div>
+                                            <div className="mt-8 ">{filme.title}</div>
                                         </div>
-                                        <div className=" transform motion-safe:hover:scale-110 ... shadow-md transition-all">
-                                            <ActionButton
-                                                icon={<button className="bg-red-600 rounded p-1 text-xs mr-2">
-                                                        <Trash size={15} color="#ffffff" weight="light" />
-                                                </button>}
-                                                onTap={() => {
-                                                    props.removerItemCarrinho(filme);
-                                                }}
-                                            />
+                                        <div className="flex gap-3 ">
+                                            <div className=" transform motion-safe:hover:scale-110 ... shadow-md transition-all  mt-12 mr-0">
+                                                <ActionButton
+                                                    icon={<button className="bg-red-600 rounded p-1 text-xs ">
+                                                            <Trash size={12} color="#ffffff" weight="light" />
+                                                    </button>}
+                                                    onTap={() => {
+                                                        props.removerItemCarrinho(filme);
+                                                    }}
+                                                />
+
+                                                </div>
+                                                <div className="flex pt-12 pr-1 ">
+                                                    <ActionButton
+                                                        icon={<button className="bg-blue-500 rounded p-1 text-xs mr-2 transform motion-safe:hover:scale-110 ... shadow-md transition-all">
+                                                                <CaretCircleLeft size={12} color="#ffffff" weight="light" />
+                                                        </button>}
+                                                        onTap={() => {
+                                                            props.addFilmesCart(filme);
+                                                        }}
+                                                    />
+                                                    <div className="w-3">{1}</div>
+                                                    <ActionButton
+                                                        icon={<button className="bg-blue-500 rounded p-1 text-xs mr-2 transform motion-safe:hover:scale-110 ... shadow-md transition-all">
+                                                                <CaretCircleRight size={12} color="#ffffff" weight="light" />
+                                                        </button>}
+                                                        onTap={() => {
+                                                            props.addFilmesCart(filme)
+                                                        }}
+                                                    />
+                                                </div>
                                         </div>
                                     </div>
                                 </li>

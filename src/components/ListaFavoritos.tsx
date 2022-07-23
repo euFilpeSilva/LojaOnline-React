@@ -22,7 +22,7 @@ export function ListaFavoritos(props: FavoriteProps) {
                             <li className=" rounded border-solid border-2 mt-1 text-xs border-slate-600 transform motion-safe:hover:scale-110 ... transition-all shadow-md"  >
                                 <div className="flex space-x-4 ... pb-2 pt-2 pl-2 overflow-hidden ">
                                     <div className="flex w-[100%]">
-                                        <img src={`${image_path}${filme.poster_path}`} className=" w-20 h-20 mr-3" />
+                                        <img src={`${image_path}${filme.poster_path}`} className="  w-20 h-20 mr-3" />
                                         <div className="mt-8">{filme.title}</div>
                                     </div>
                                     <div className=" flex gap-2 pt-7">

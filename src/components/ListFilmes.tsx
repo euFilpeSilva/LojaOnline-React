@@ -2,7 +2,7 @@ import axios from "axios";
 import { Heart, Star } from "phosphor-react";
 import { useEffect, useState } from 'react';
 import ActionButton from "./ActionButton";
-import Favoritos from "./Favoritos";
+import Favoritos from "./MenuFavoritos";
 import GenreFilms from "./GenreFilms";
 import Sidebar from './Sidebar'
 
@@ -21,8 +21,9 @@ type PopularFilms = {
   total_results: number,
 }
 
-type ListFilmsrProps = {
+export type ListFilmsrProps = {
   isOpen: boolean,
+  addFilmesCart: (filme: Film) => void,
   isFavorite: boolean,
 }
 
@@ -102,7 +103,7 @@ export default function ListFilmes(props: ListFilmsrProps) {
         <strong>Filmes populares</strong>
       </div>
       <div className="flex dark:bg-gray-800 pt-0">
-        <div className={props.isOpen ? "w-[75vw]  " : " transition-all duration-1000 "}>
+        <div className={props.isOpen ? "w-[75vw]  " : " transition-all duration-1000 " && props.isFavorite ? "w-[75vw]  " : " transition-all duration-1000 "}>
           <ul className=" flex flex-wrap  justify-center items-center ml-0 mr-[2vw] mt-24 ">
             {filmes.length === 0 && <p>Carregando...</p>}
             {filmes.length > 0 && filmes.map(filme => (
@@ -113,7 +114,7 @@ export default function ListFilmes(props: ListFilmsrProps) {
                     onTap={() => addFilmeFavorite(filme)}
                   />
                 </div>
-                <li key={filme.id} className="border-2 border-slate-600 rounded  m-4 flex flex-col w-60 dark:bg-gray-800">
+                <li key={filme.id} className="border-2 border-slate-600 rounded  m-4 flex flex-col w-60 dark:bg-gray-800 items-center">
                   <img key={filme.id} src={`${image_path}${filme.poster_path}`} className=" w-60 h-96" />
                   <strong className="p-1 pb-2 text-center leading-4  dark:bg-gray-800 pt-2 text-white">{filme.title}</strong>
                   <div className=" flex flex-col dark:bg-gray-800 pl-4 gap-1 text-sm items-center">
@@ -128,7 +129,7 @@ export default function ListFilmes(props: ListFilmsrProps) {
                     </div>
                     </div>
                   </div>
-                  <div className=" mb-4 w-[9vw] ml-7 bg-white hover:dark:bg-gray-400 text-dark:bg-gray-800 font-bold py-2 px-4  hover:border-gray-500 rounded text-center">
+                  <div className=" mb-4 w-[9vw] bg-white hover:dark:bg-gray-400 text-dark:bg-gray-800 font-bold py-2 px-4  hover:border-gray-500 rounded text-center">
                     <ActionButton
                       icon={<div className="w-[100%]">Adicionar</div>}
                       onTap={() => { addFilmesCart(filme) }}
@@ -141,7 +142,7 @@ export default function ListFilmes(props: ListFilmsrProps) {
           </ul>
         </div>
         {/*Quando o estado do isOpen muda, o Sidebar é exibido, O isOpen é recdebido atraves do ListFilms e é atualizado fora do ListFilms*/}
-        <Sidebar isOpen={props.isOpen} carrinhoLista={carrinho} removerItemCarrinho={removerFilmeCarrinho} />
+        <Sidebar isOpen={props.isOpen} carrinhoLista={carrinho} removerItemCarrinho={removerFilmeCarrinho} addFilmesCart={props.addFilmesCart} />
         <Favoritos isFavorite={props.isFavorite} favoriteLista={favorite} removerItemFavorito={removerFilmeFavorito} />
       </div>
     </div>
