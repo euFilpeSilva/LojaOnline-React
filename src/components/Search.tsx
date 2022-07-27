@@ -2,16 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import{ Film } from './ListFilmes';
 
-
 type SearchProps = {
     filmes: Film[],
 }
 
 export default function Search(props: SearchProps) {
-
     // console.log('filmes Search', props.filmes);
     
-
     const [search, setSearch] = useState('');
     
     // Cria um backup da lista de filmes
