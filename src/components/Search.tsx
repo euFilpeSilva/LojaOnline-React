@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import{ Film } from './ListFilmes';
 
 type SearchProps = {
@@ -9,31 +7,25 @@ type SearchProps = {
 export default function Search(props: SearchProps) {
     // console.log('filmes Search', props.filmes);
     
-    const [search, setSearch] = useState('');
-    
     // Cria um backup da lista de filmes
     const filmesList = [...props.filmes]
 
-    // console.log(search);
-
     function onChange(e: any) {
-        // console.log(e.target.value);
-        console.log(props.filmes);
-
+        console.log(e.target.value);
+        
+        // console.log(filmesList);
         props.filmes.map( (filme, index) => {
             if(!filme.title.includes(e.target.value)) {
-
+                
                 props.filmes.pop();
             }
           });
 
           // Se a pesquisa estiver vazia, copiar o conteúdo do backup para voltar com a lista original
           if(e.target.value.length < 1) {
-              () =>props.filmes = filmesList;
+              props.filmes = filmesList
           }
     }
-
-    
     return (
         <div className="flex items-center w-96 ml-8" >
             <div className="relative w-full">
@@ -42,7 +34,7 @@ export default function Search(props: SearchProps) {
                 </div>
                 <input type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search"
                     onChange={onChange}
-                    // value={search}
+                   
                 />   
             </div>
         </div>

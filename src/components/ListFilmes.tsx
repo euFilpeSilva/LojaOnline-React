@@ -122,9 +122,9 @@ export default function ListFilmes(props: ListFilmesProps) {
                     </div>
                     </div>
                   </div>
-                  <div className=" mb-4 w-[9vw] bg-white hover:dark:bg-gray-400 text-dark:bg-gray-800 font-bold py-2 px-4  hover:border-gray-500 rounded text-center">
+                  <div className=" md:text-lg mb-4 md:w-[12vw] bg-white hover:dark:bg-gray-400 text-dark:bg-gray-800 font-bold ml-4 mr-4 py-3 px-4 hover:border-gray-500 rounded text-center items-center flex justify-center">
                     <ActionButton
-                      icon={<div className="w-[100%]">Adicionar</div>}
+                      icon={<div className=" w-[14vw] ">Adicionar</div>}
                       onTap={() => { addFilmesCart(filme) }}
                     />
                   </div>
