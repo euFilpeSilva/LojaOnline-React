@@ -1,13 +1,18 @@
-import { Heart, ShoppingCart } from "phosphor-react";
+import { Heart, Key, ShoppingCart } from "phosphor-react";
 import ActionButton from "./ActionButton";
-import Form from './Form';
+import { Film } from "./ListFilmes";
+import Search from './Search';
 
 type NavBarProps = {
     cartAction: () => void,
     favoriteAction: () => void,
+    filmes: Film[],
 }
 
 export default function Navbar(props: NavBarProps) {
+
+    console.log('Filmes NavBar: ', props.filmes);
+    
 
     return (
         <div className=" bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-800 fixed z-40 w-full ">
@@ -19,7 +24,7 @@ export default function Navbar(props: NavBarProps) {
                         </div>
                     </a>
                     <div className="content">
-                        <Form />
+                        <Search filmes={props.filmes}/>
                     </div>
                     <div >
                         <div className="flex space-x-5 mx-5 ">

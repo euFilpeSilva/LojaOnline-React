@@ -1,10 +1,9 @@
-import axios from "axios";
 import { Heart, Star } from "phosphor-react";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ActionButton from "./ActionButton";
-import Favoritos from "./MenuFavoritos";
 import GenreFilms from "./GenreFilms";
-import Sidebar from './Sidebar'
+import Favoritos from "./MenuFavoritos";
+import Sidebar from './Sidebar';
 
 export type Film = {
   id: number,
@@ -14,35 +13,28 @@ export type Film = {
   genre_ids: number[],
 }
 
-type PopularFilms = {
+export type PopularFilms = {
   page: number,
   results: Film[],
   total_pages: number,
   total_results: number,
 }
 
-export type ListFilmsrProps = {
+export type ListFilmesProps = {
   isOpen: boolean,
   addFilmesCart: (filme: Film) => void,
   isFavorite: boolean,
+  filmes: Film[]
 }
 
 
-export default function ListFilmes(props: ListFilmsrProps) {
-  const [filmes, setFilmes] = useState<Film[]>([]);
+export default function ListFilmes(props: ListFilmesProps) {
+  
   const [carrinho, setCarrinho] = useState<Film[]>([]);
   const [favorite, setFavorite] = useState<Film[]>([]);
-
-
-  const baseURL = "https://api.themoviedb.org/3/movie/popular?api_key=c53174418b2a81eacf8a7966fa850c98&language=pt-BR&page+=page"
+ 
   const image_path = "https://image.tmdb.org/t/p/w500"
 
-  useEffect(() => {
-    axios.get<PopularFilms>(baseURL)
-      .then((response) => {
-        setFilmes(response.data.results)
-      });
-  }, []);
 
   function addFilmesCart(filme: Film) {
     setCarrinho([...carrinho, filme]);
@@ -103,10 +95,11 @@ export default function ListFilmes(props: ListFilmsrProps) {
         <strong>Filmes populares</strong>
       </div>
       <div className="flex dark:bg-gray-800 pt-0">
+        {/* ternarios contendo as logicas de adaptação da tela ao abrir e fechar os menus laterais */}
         <div className={props.isOpen ? "w-[75vw]  " : " transition-all duration-1000 " && props.isFavorite ? "w-[75vw]  " : " transition-all duration-1000 "}>
           <ul className=" flex flex-wrap  justify-center items-center ml-0 mr-[2vw] mt-24 ">
-            {filmes.length === 0 && <p>Carregando...</p>}
-            {filmes.length > 0 && filmes.map(filme => (
+            {props.filmes.length === 0 && <p>Carregando...</p>}
+            {props.filmes.length > 0 && props.filmes.map(filme => (
               <div key={filme.id} className="transform motion-safe:hover:scale-110 ... transition-all shadow-md">
                 <div className="absolute pl-2 pr-2 pt-2 dark:bg-gray-900 rounded-full justify-center items-center z-40 right-0 transform motion-safe:hover:scale-110 ... transition-all shadow-md">
                   <ActionButton
