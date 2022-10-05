@@ -7,9 +7,6 @@ import axios from "axios";
 export default function App() {
   {/*posso usar o isOpen em todos os componentes que estão sendo importados aqui.*/ }
   const [isOpen, setIsOpen] = useState(false);
-
-
-
   const showSidebar = () => setIsOpen(!isOpen)
 
   const [isFavorite, setIsFavorite] = useState(false)
